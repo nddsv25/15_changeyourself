@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ Trình Nhan Sắc 15 Ngày</title>
+    <link rel="stylesheet" href="beauty.css">
+</head>
+<body>
+    <audio id="tick-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" preload="auto"></audio>
+    <audio id="tada-sound" src="https://assets.mixkit.co/active_storage/sfx/2018/2018-preview.mp3" preload="auto"></audio>
+    <audio id="day-complete-sound" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3" preload="auto"></audio>
+
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">⬅ Quay lại Trang chủ</a>
+
+        <header>
+            <h1>✨ LỘ TRÌNH NHAN SẮC ✨</h1>
+            <p class="subtitle">Kiên trì mỗi ngày để thấy phiên bản rạng rỡ nhất!</p>
+            
+            <div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
+            <p id="progress-text" class="progress-text">0% hoàn thành lộ trình</p>
+        </header>
+
+        <details class="fixed-tasks" id="fixed-tasks" open>
+            <summary>📌 4 Quy tắc cố định (Bắt buộc phải tích ✔️ mới được qua ngày)</summary>
+            <div class="fixed-content">
+                <ul>
+                    <li><label><input type="checkbox" class="task-cb"> <span class="task-text"><strong>💧 Uống đủ nước:</strong> Sáng dậy uống 1 ly ấm 300ml. Trong ngày cứ 30-45p uống vài ngụm.</span></label></li>
+                    <li><label><input type="checkbox" class="task-cb"> <span class="task-text"><strong>☀️ Làm sạch & Chống nắng:</strong> Sáng bôi kem chống nắng. Tối bắt buộc tẩy trang rồi mới rửa mặt.</span></label></li>
+                    <li><label><input type="checkbox" class="task-cb"> <span class="task-text"><strong>💤 Giấc ngủ phục hồi:</strong> Tắt điện thoại trước 23:00. Khung 23:00-02:00 da tái tạo mạnh nhất.</span></label></li>
+                    <li><label><input type="checkbox" class="task-cb"> <span class="task-text"><strong>🧘‍♀️ Kiểm soát cơ mặt:</strong> Lưng thẳng, mở vai. Tuyệt đối không nheo mắt, nhăn trán, chống cằm.</span></label></li>
+                </ul>
+            </div>
+        </details>
+
+        <div class="daily-card" id="daily-card">
+            <div class="day-badge" id="day-number">Ngày 1</div>
+            <h2 id="day-title">Tên nhiệm vụ</h2>
+            
+            <div class="task-section"><h3>✅ Việc cần làm hôm nay:</h3><p id="day-task">Nội dung...</p></div>
+            <div class="task-section instruction"><h3>💡 Hướng dẫn / Lý do:</h3><p id="day-instruction">Chi tiết...</p></div>
+            <div class="advice-box"><p id="day-advice">Lời khuyên...</p></div>
+
+            <div class="nav-buttons">
+                <button id="prev-btn" class="nav-btn" onclick="prevDay()">⬅ Ngày trước</button>
+                <button id="current-btn" class="nav-btn current-day-btn hidden" onclick="goToCurrent()">🎯 Về hôm nay</button>
+                <button id="next-btn" class="nav-btn action-btn" onclick="nextDay()">Xong! Tiếp theo 🚀</button>
+            </div>
+        </div>
+        
+        <div id="congrats-message" class="hidden">
+            <h2>🎉 CHÚC MỪNG BẠN! 🎉</h2>
+            <p>15 ngày lột xác nhan sắc đã hoàn tất. Bạn đã trở thành phiên bản tuyệt vời nhất của chính mình!</p>
+            
+            <div class="share-actions">
+                <button onclick="shareAchievement()" class="share-btn share-native">📲 Chia sẻ ngay</button>
+                <button onclick="shareToFacebook()" class="share-btn share-fb">📘 Facebook</button>
+            </div>
+
+            <button onclick="resetProgress()" class="reset-btn">Bắt đầu lại lộ trình</button>
+        </div>
+    </div>
+
+    <div id="badge-modal" class="modal hidden">
+        <div class="modal-content">
+            <div id="badge-icon" class="badge-icon">🥉</div>
+            <h2 id="badge-title">Thành tựu</h2>
+            <p id="badge-desc">Mô tả</p>
+            <button class="modal-btn" onclick="closeModal()">Tuyệt vời!</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="beauty.js"></script>
+</body>
+</html>
