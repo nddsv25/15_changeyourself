@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lộ Trình Cơ Thể 15 Ngày</title>
+    <link rel="stylesheet" href="fitness.css">
+</head>
+<body>
+    <audio id="tick-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" preload="auto"></audio>
+    <audio id="tada-sound" src="https://assets.mixkit.co/active_storage/sfx/2018/2018-preview.mp3" preload="auto"></audio>  
+    <audio id="day-complete-sound" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3" preload="auto"></audio>
+
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">⬅ Quay lại Trang chủ</a>
+
+        <header>
+            <h1>🔥 LỘ TRÌNH ĐỘ DÁNG 🔥</h1>
+            <p class="subtitle">Kỷ luật là cầu nối giữa mục tiêu và kết quả!</p>
+            <div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
+            <p id="progress-text" class="progress-text">0% hoàn thành</p>
+        </header>
+
+        <details class="fixed-tasks" open>
+            <summary>📌 4 "Luật bất thành văn" (Phải tích hết mới được qua ngày)</summary>
+            <div class="fixed-content">
+                <ul>
+                    <li><label><input type="checkbox" class="task-cb"> <span class="task-text"><strong>🚫 Cắt đường, Giảm mặn:</strong> Tuyệt đối không nước ngọt, bánh kẹo. Nấu ăn nhạt hơn.</span></label></li>
+                    <li><label><input type="checkbox" class="task-cb"> <span class="task-text"><strong>💧 Uống 2 - 2.5 lít nước:</strong> Cứ 30 phút uống một ngụm, không đợi khát.</span></label></li>
+                    <li><label><input type="checkbox" class="task-cb"> <span class="task-text"><strong>🧍‍♀️ Chỉnh đốn tư thế:</strong> Ngồi học thẳng lưng. Đi đứng hóp bụng nhẹ, mở vai.</span></label></li>
+                    <li><label><input type="checkbox" class="task-cb"> <span class="task-text"><strong>💤 Ngủ đủ và đúng giờ:</strong> Lên giường trước 23:00 và ngủ đủ 7-8 tiếng.</span></label></li>
+                </ul>
+            </div>
+        </details>
+
+        <div class="daily-card" id="daily-card">
+            <div class="day-badge" id="day-number">Ngày 1</div>
+            <h2 id="day-title">Tên nhiệm vụ</h2>
+            <p class="daily-reminder"><i>"Mỗi ngày dành ra khoảng 15-20 phút để thực hiện nhiệm vụ vận động hoặc dinh dưỡng đặc biệt này nhé."</i></p>
+            <div class="task-section"><h3>✅ Việc cần làm hôm nay:</h3><p id="day-task">Nội dung...</p></div>
+            <div class="task-section instruction"><h3>💡 Hướng dẫn / Lý do:</h3><p id="day-instruction">Chi tiết...</p></div>
+            <div class="advice-box"><p id="day-advice">Lời khuyên...</p></div>
+
+            <div class="nav-buttons">
+                <button id="prev-btn" class="nav-btn" onclick="prevDay()">⬅ Ngày trước</button>
+                <button id="current-btn" class="nav-btn current-day-btn hidden" onclick="goToCurrent()">🎯 Về hôm nay</button>
+                <button id="next-btn" class="nav-btn action-btn" onclick="nextDay()">Xong! Tiếp theo 🚀</button>
+            </div>
+        </div>
+        
+        <div id="congrats-message" class="hidden">
+            <h2>🎉 CHÚC MỪNG BẠN! 🎉</h2>
+            <p>15 ngày kỷ luật đã tạo nên một cơ thể khỏe mạnh. Hãy tự hào về bản thân!</p>
+            <button onclick="resetProgress()" class="reset-btn">Bắt đầu lại lộ trình</button>
+        </div>
+    </div>
+
+    <div id="badge-modal" class="modal hidden">
+        <div class="modal-content">
+            <div id="badge-icon" class="badge-icon">🥉</div>
+            <h2 id="badge-title">Thành tựu</h2>
+            <p id="badge-desc">Mô tả</p>
+            <button class="modal-btn" onclick="closeModal()">Tuyệt vời!</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="fitness.js"></script>
+</body>
+</html>

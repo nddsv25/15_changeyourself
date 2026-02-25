@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Ngày Thay Đổi Bản Thân</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>15 NGÀY THAY ĐỔI BẢN THÂN</h1>
+            <p>Chào bạn! Bạn muốn tập trung cải thiện điều gì nhất?</p>
+        </header>
+
+        <div class="choice-container">
+            <div class="card beauty" onclick="selectPath('beauty')">
+                <div class="overlay">
+                    <h2>Nhan Sắc</h2>
+                    <p>Skincare, chăm sóc tóc và phong cách.</p>
+                </div>
+            </div>
+
+            <div class="card fitness" onclick="selectPath('fitness')">
+                <div class="overlay">
+                    <h2>Cơ Thể</h2>
+                    <p>Tập luyện, ăn uống và tư thế (posture).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="selection-msg"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
